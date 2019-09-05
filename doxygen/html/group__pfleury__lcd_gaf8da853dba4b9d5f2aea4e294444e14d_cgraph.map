@@ -1,0 +1,5 @@
+<map id="lcd_clrscr" name="lcd_clrscr">
+<area shape="rect" id="node1" title="Clear display and set cursor to home position." alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$lcd_8c.html#a4ca4373275e11ba1a2d2cbd242cbf1a4" title=" " alt="" coords="132,5,229,32"/>
+<area shape="rect" id="node3" href="$lcd_8c.html#a48a16fff03a1164f27b460a49e702dc4" title=" " alt="" coords="277,5,348,32"/>
+</map>

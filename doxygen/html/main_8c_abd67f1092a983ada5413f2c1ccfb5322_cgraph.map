@@ -1,0 +1,12 @@
+<map id="Menu" name="Menu">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,60,108"/>
+<area shape="rect" id="node2" href="$group__pfleury__lcd.html#gaf8da853dba4b9d5f2aea4e294444e14d" title="Clear display and set cursor to home position." alt="" coords="230,5,309,32"/>
+<area shape="rect" id="node5" href="$group__pfleury__lcd.html#gadbf47a5efdf02367ded1ebf8f9edb5fe" title="Set cursor to specified position." alt="" coords="227,56,312,83"/>
+<area shape="rect" id="node8" href="$group__pfleury__lcd.html#ga9af28b2779326b63ff4356e2b1828984" title="Initialize display and select type of cursor." alt="" coords="112,107,175,133"/>
+<area shape="rect" id="node10" href="$group__pfleury__lcd.html#ga8ffdfcac7638368ff04364c14984266e" title="Display string without auto linefeed." alt="" coords="108,157,179,184"/>
+<area shape="rect" id="node3" href="$lcd_8c.html#a4ca4373275e11ba1a2d2cbd242cbf1a4" title=" " alt="" coords="511,5,608,32"/>
+<area shape="rect" id="node4" href="$lcd_8c.html#a48a16fff03a1164f27b460a49e702dc4" title=" " alt="" coords="656,5,727,32"/>
+<area shape="rect" id="node6" href="$group__pfleury__lcd.html#gaea9d14f02df06f948cb5a56776980826" title="Send LCD controller instruction command." alt="" coords="360,56,463,83"/>
+<area shape="rect" id="node7" href="$lcd_8c.html#a6aa4fa5c8ba19268338fa4215fa1807e" title=" " alt="" coords="523,56,596,83"/>
+<area shape="rect" id="node9" href="$group__pfleury__lcd.html#gafa7e36b95c43d603f510273ad077cbbe" title="Display character at current cursor position." alt="" coords="234,107,305,133"/>
+</map>

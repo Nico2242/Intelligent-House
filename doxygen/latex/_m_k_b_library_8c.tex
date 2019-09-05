@@ -1,0 +1,184 @@
+\hypertarget{_m_k_b_library_8c}{}\doxysection{Matrix\+Keyboard\+Lib/\+M\+K\+B\+Library.c File Reference}
+\label{_m_k_b_library_8c}\index{MatrixKeyboardLib/MKBLibrary.c@{MatrixKeyboardLib/MKBLibrary.c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}M\+K\+B\+Library.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+G\+B\+Library.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_m_k_b_library_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_m_k_b_library_8c_ab3288716c21bf82ad385ff699fa1670b}{Column\+Scan}} ()
+\begin{DoxyCompactList}\small\item\em Col1 -\/ Col4 goes low one after each other. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_m_k_b_library_8c_a2a4456cbb7c716b1e3e904f95b73a6d2}{Read\+Rows}} ()
+\begin{DoxyCompactList}\small\item\em Read rows to check if one goes low(0) when clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_k_b_library_8c_af64eccad2c68cdf2923dc2f9ca92a38e}{Decode\+Key\+Board}} (int keypressed)
+\begin{DoxyCompactList}\small\item\em Decode which key is pressed and do the right menu function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_k_b_library_8c_a7ce0a14b6e7779fbb2d9a05333792c41}{Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize ports. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{_m_k_b_library_8c_a0de9cbfb23a40f03434d8eb141457c08}{current\+Menu}} = \textquotesingle{}0\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_m_k_b_library_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{_m_k_b_library_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{MKBLibrary.c@{MKBLibrary.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!MKBLibrary.c@{MKBLibrary.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+\doxysubsection*{Port mapping }
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Coloumn  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Port  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Arduino Pin  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Keypad Pin   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Coloumn  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Port  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Arduino Pin  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Keypad Pin   }\\\cline{1-4}
+\endhead
+C1  &P\+C0  &\#37  &\#4   \\\cline{1-4}
+C2  &P\+C1  &\#36  &\#3   \\\cline{1-4}
+C3  &P\+C2  &\#35  &\#2   \\\cline{1-4}
+C4  &P\+C3  &\#34  &\#1   \\\cline{1-4}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Row  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Port  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Arduino Pin  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Keypad Pin   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Row  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Port  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Arduino Pin  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Keypad Pin   }\\\cline{1-4}
+\endhead
+R1  &P\+C4  &\#33  &\#8   \\\cline{1-4}
+R2  &P\+C5  &\#32  &\#7   \\\cline{1-4}
+R3  &P\+C6  &\#31  &\#6   \\\cline{1-4}
+R4  &P\+C7  &\#30  &\#5   \\\cline{1-4}
+\end{longtabu}
+
+
+\doxysubsection*{Decoding }
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{9}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R4  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R3  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C4  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C3  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Key   }\\\cline{1-9}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R4  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R3  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C4  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C3  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C2  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ C1  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Key   }\\\cline{1-9}
+\endhead
+1  &1  &1  &0  &1  &1  &1  &0  &\char`\"{}1\char`\"{}   \\\cline{1-9}
+1  &1  &0  &1  &1  &1  &1  &0  &\char`\"{}4\char`\"{}   \\\cline{1-9}
+1  &0  &1  &1  &1  &1  &1  &0  &\char`\"{}7\char`\"{}   \\\cline{1-9}
+0  &1  &1  &1  &1  &1  &1  &0  &\char`\"{}$\ast$\char`\"{}   \\\cline{1-9}
+1  &1  &1  &0  &1  &1  &0  &1  &\char`\"{}2\char`\"{}   \\\cline{1-9}
+1  &1  &0  &1  &1  &1  &0  &1  &\char`\"{}5\char`\"{}   \\\cline{1-9}
+1  &0  &1  &1  &1  &1  &0  &1  &\char`\"{}8\char`\"{}   \\\cline{1-9}
+0  &1  &1  &1  &1  &1  &0  &1  &\char`\"{}0\char`\"{}   \\\cline{1-9}
+1  &1  &1  &0  &1  &0  &1  &1  &\char`\"{}3\char`\"{}   \\\cline{1-9}
+1  &1  &0  &1  &1  &0  &1  &1  &\char`\"{}6\char`\"{}   \\\cline{1-9}
+1  &0  &1  &1  &1  &0  &1  &1  &\char`\"{}9\char`\"{}   \\\cline{1-9}
+0  &1  &1  &1  &1  &0  &1  &1  &\char`\"{}\#\char`\"{}   \\\cline{1-9}
+1  &1  &1  &0  &0  &1  &1  &1  &\char`\"{}\+A\char`\"{}   \\\cline{1-9}
+1  &1  &0  &1  &0  &1  &1  &1  &\char`\"{}\+B\char`\"{}   \\\cline{1-9}
+1  &0  &1  &1  &0  &1  &1  &1  &\char`\"{}\+C\char`\"{}   \\\cline{1-9}
+0  &1  &1  &1  &0  &1  &1  &1  &\char`\"{}\+D\char`\"{}   \\\cline{1-9}
+\end{longtabu}
+
+
+Definition at line 46 of file M\+K\+B\+Library.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_m_k_b_library_8c_ab3288716c21bf82ad385ff699fa1670b}\label{_m_k_b_library_8c_ab3288716c21bf82ad385ff699fa1670b}} 
+\index{MKBLibrary.c@{MKBLibrary.c}!ColumnScan@{ColumnScan}}
+\index{ColumnScan@{ColumnScan}!MKBLibrary.c@{MKBLibrary.c}}
+\doxysubsubsection{\texorpdfstring{ColumnScan()}{ColumnScan()}}
+{\footnotesize\ttfamily void Column\+Scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Col1 -\/ Col4 goes low one after each other. 
+
+The column\+Counter counts 1, 2, 3 and 4 and stores values static between each call. 
+
+Definition at line 56 of file M\+K\+B\+Library.\+c.
+
+\mbox{\Hypertarget{_m_k_b_library_8c_af64eccad2c68cdf2923dc2f9ca92a38e}\label{_m_k_b_library_8c_af64eccad2c68cdf2923dc2f9ca92a38e}} 
+\index{MKBLibrary.c@{MKBLibrary.c}!DecodeKeyBoard@{DecodeKeyBoard}}
+\index{DecodeKeyBoard@{DecodeKeyBoard}!MKBLibrary.c@{MKBLibrary.c}}
+\doxysubsubsection{\texorpdfstring{DecodeKeyBoard()}{DecodeKeyBoard()}}
+{\footnotesize\ttfamily void Decode\+Key\+Board (\begin{DoxyParamCaption}\item[{int}]{keypressed }\end{DoxyParamCaption})}
+
+
+
+Decode which key is pressed and do the right menu function. 
+
+
+
+Definition at line 106 of file M\+K\+B\+Library.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_m_k_b_library_8c_af64eccad2c68cdf2923dc2f9ca92a38e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_m_k_b_library_8c_a7ce0a14b6e7779fbb2d9a05333792c41}\label{_m_k_b_library_8c_a7ce0a14b6e7779fbb2d9a05333792c41}} 
+\index{MKBLibrary.c@{MKBLibrary.c}!Init@{Init}}
+\index{Init@{Init}!MKBLibrary.c@{MKBLibrary.c}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize ports. 
+
+Set output ports and enable pull-\/ups 
+
+Definition at line 194 of file M\+K\+B\+Library.\+c.
+
+\mbox{\Hypertarget{_m_k_b_library_8c_a2a4456cbb7c716b1e3e904f95b73a6d2}\label{_m_k_b_library_8c_a2a4456cbb7c716b1e3e904f95b73a6d2}} 
+\index{MKBLibrary.c@{MKBLibrary.c}!ReadRows@{ReadRows}}
+\index{ReadRows@{ReadRows}!MKBLibrary.c@{MKBLibrary.c}}
+\doxysubsubsection{\texorpdfstring{ReadRows()}{ReadRows()}}
+{\footnotesize\ttfamily int Read\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read rows to check if one goes low(0) when clicked. 
+
+If a key is pressed the corresponding row of the current column scanned, goes low and the key pressed is returned. 
+
+Definition at line 91 of file M\+K\+B\+Library.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_m_k_b_library_8c_a0de9cbfb23a40f03434d8eb141457c08}\label{_m_k_b_library_8c_a0de9cbfb23a40f03434d8eb141457c08}} 
+\index{MKBLibrary.c@{MKBLibrary.c}!currentMenu@{currentMenu}}
+\index{currentMenu@{currentMenu}!MKBLibrary.c@{MKBLibrary.c}}
+\doxysubsubsection{\texorpdfstring{currentMenu}{currentMenu}}
+{\footnotesize\ttfamily char current\+Menu = \textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 52 of file M\+K\+B\+Library.\+c.
+

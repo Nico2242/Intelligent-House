@@ -108,50 +108,53 @@ void DecodeKeyBoard(int keypressed)
 	char charKeyPressed;
 	switch (keypressed)
 	{
-		case 0b11101110:
+		case 0b11101110:						// or 0xEE, Keypad 1
 			printf("1");
-			if (currentMenu == '0')
+			if (currentMenu == '0')				// Main Menu
 			{
-				Menu('2');
+				Menu('2');						// Goto: Light Control Menu Part 1
 			}
-			if (currentMenu == '4')
-			{
-				RGBChangeColor(255,255,255);
-			}
-			if (currentMenu == '2')
+			if (currentMenu == '2')				// Light Control Menu Part 1
 			{
 				RGBTurnOn();
 			}
-		break;
-		case 0b11011110:
-			printf("4"); 
-			if (currentMenu == '4')
+			if (currentMenu == '4')				// Light Color Menu
 			{
-				RGBChangeColor(255,0,150);
+				RGBChangeColor(255,255,255);	// White
 			}
 		break;
-		case 0b10111110:
-			printf("7");
-		break;
-		case 0b01111110:
-			printf("*"); 
-		break;
-		case 0b11101101:
+		case 0b11101101:						// or 0xED, Keypad 2
 			printf("2");
-			if (currentMenu == '2')
+			if (currentMenu == '2')				// Light Control Menu Part 1
 			{
 				RGBTurnOff();
 			}
-			if (currentMenu == '4')
+			if (currentMenu == '4')				// Light Color Menu
 			{
-				RGBChangeColor(255,100,0);
+				RGBChangeColor(255,100,0);		// Yellow
 			}
 		break;
-		case 0b11011101:
-			printf("5"); 
+		case 0b11101011:						// or 0xEB, Keypad 3
+			printf("3"); 
+			if (currentMenu == '3')				// Light Control Menu Part 2
+			{
+				Menu('4');						// Goto: Light Color Menu
+			}
+			if (currentMenu == '4')				// Light Color Menu
+			{
+				RGBChangeColor(0,0,255);		// Blue
+			}
 		break;
-		case 0b10111101:
-			printf("8"); 
+		case 0b11011110:						// or 0xDE, Keypad 4
+			printf("4"); 
+			if (currentMenu == '0')				// Main Menu
+			{
+				Menu('5');						// Goto: Temperature Control Menu
+			}
+			if (currentMenu == '4')				// Light Color Menu
+			{
+				RGBChangeColor(255,0,150);
+			}
 		break;
 		case 0b01111101:
 			printf("0");
@@ -172,17 +175,6 @@ void DecodeKeyBoard(int keypressed)
 				Menu('3');
 			}
 		break;
-		case 0b11101011:
-			printf("3"); 
-			if (currentMenu == '3')
-			{
-				Menu('4');
-			}
-			if (currentMenu == '4')
-			{
-				RGBChangeColor(0,0,255);
-			}
-		break;
 		case 0b10111011:
 			printf("9");
 			if (currentMenu == '0')
@@ -193,28 +185,6 @@ void DecodeKeyBoard(int keypressed)
 			{
 				Menu('3');
 			}
-		break;
-		case 0b11011011:
-			printf("6");
-		break;
-		case 0b01111011:
-			printf("#");
-			Menu('0'); 
-		break;
-		case 0b11100111:
-			printf("A"); 
-		break;
-		case 0b11010111:
-			printf("B"); 
-		break;
-		case 0b10110111:
-			printf("C"); 
-		break;
-		case 0b01110111:
-			printf("D"); 
-		break;
-		default:
-		
 		break;
 	}
 }

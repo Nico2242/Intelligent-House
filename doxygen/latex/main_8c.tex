@@ -1,0 +1,121 @@
+\hypertarget{main_8c}{}\doxysection{Intelligent\+House/main.c File Reference}
+\label{main_8c}\index{IntelligentHouse/main.c@{IntelligentHouse/main.c}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}M\+K\+B\+Library.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lcd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+G\+B\+Library.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_abd67f1092a983ada5413f2c1ccfb5322}{Menu}} (char menu)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{main.c@{main.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+\doxysubsection*{Menu }
+
+Keypad standard function all time\+:
+
+0=Back -\/ 9=Next -\/ \#=Main\+Menu
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Code  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Code  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name   }\\\cline{1-2}
+\endhead
+\PBS\centering 0  &Main Menu Part 1   \\\cline{1-2}
+\PBS\centering 1  &Main Menu Part 2   \\\cline{1-2}
+\PBS\centering 2  &Light Control Menu Part 1   \\\cline{1-2}
+\PBS\centering 3  &Light Control Menu Part 2   \\\cline{1-2}
+\PBS\centering 4  &Light Color Menu   \\\cline{1-2}
+\PBS\centering 5  &Temperature Control Menu   \\\cline{1-2}
+\PBS\centering 6  &Windows Control Menu   \\\cline{1-2}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Menu  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Functions   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Menu  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Functions   }\\\cline{1-2}
+\endhead
+\PBS\centering Main Menu Part 1  &1. Light ~\newline
+ 2. Temperature   \\\cline{1-2}
+\PBS\centering Main Menu Part 2  &1. Windows ~\newline
+ 2. Garage   \\\cline{1-2}
+\PBS\centering Light Control Menu Part 1  &1. Turn On ~\newline
+ 2. Turn off   \\\cline{1-2}
+\PBS\centering Light Control Menu Part 2  &1. Color   \\\cline{1-2}
+\PBS\centering Light Color Menu  &1. White ~\newline
+ 2. Yellow ~\newline
+ 2. Blue ~\newline
+ 2. Pink   \\\cline{1-2}
+\PBS\centering Temperature Control Menu  &1. Adjust   \\\cline{1-2}
+\PBS\centering Windows Control Menu  &1. Open Half ~\newline
+ 2. Open Full   \\\cline{1-2}
+\end{longtabu}
+
+
+Definition at line 32 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_abd67f1092a983ada5413f2c1ccfb5322}\label{main_8c_abd67f1092a983ada5413f2c1ccfb5322}} 
+\index{main.c@{main.c}!Menu@{Menu}}
+\index{Menu@{Menu}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily void Menu (\begin{DoxyParamCaption}\item[{char}]{menu }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_abd67f1092a983ada5413f2c1ccfb5322_cgraph}
+\end{center}
+\end{figure}

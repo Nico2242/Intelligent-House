@@ -1,0 +1,114 @@
+\hypertarget{stdio__setup_8c}{}\doxysection{Intelligent\+House/\+Setup/stdio\+\_\+setup.c File Reference}
+\label{stdio__setup_8c}\index{IntelligentHouse/Setup/stdio\_setup.c@{IntelligentHouse/Setup/stdio\_setup.c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$util/setbaud.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stdio__setup_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\item 
+\#define \mbox{\hyperlink{stdio__setup_8c_a62634036639f88eece6fbf226b45f84b}{B\+A\+UD}}~9600
+\item 
+\#define \mbox{\hyperlink{stdio__setup_8c_addaa61b72aca51ed4835978d500f8755}{B\+A\+U\+D\+\_\+\+T\+OL}}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stdio__setup_8c_acd5b9b7e83ddbed4d3b46562e20e1e6e}{Uart\+Putchar}} (char data)
+\item 
+int \mbox{\hyperlink{stdio__setup_8c_a9226435e97da1b2bbb55068bb23b2b9a}{Uart\+Getchar}} (void)
+\item 
+void \mbox{\hyperlink{stdio__setup_8c_a61f5dee7d3d128cc710e664a198d0904}{Uart\+Init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static F\+I\+LE \mbox{\hyperlink{stdio__setup_8c_a0de9fa3a7fecd97102d1abef2039f21d}{the\+\_\+stdio}} = F\+D\+E\+V\+\_\+\+S\+E\+T\+U\+P\+\_\+\+S\+T\+R\+E\+AM(\mbox{\hyperlink{stdio__setup_8c_acd5b9b7e83ddbed4d3b46562e20e1e6e}{Uart\+Putchar}}, \mbox{\hyperlink{stdio__setup_8c_a9226435e97da1b2bbb55068bb23b2b9a}{Uart\+Getchar}}, \+\_\+\+F\+D\+E\+V\+\_\+\+S\+E\+T\+U\+P\+\_\+\+RW)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{stdio__setup_8c_a62634036639f88eece6fbf226b45f84b}\label{stdio__setup_8c_a62634036639f88eece6fbf226b45f84b}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!BAUD@{BAUD}}
+\index{BAUD@{BAUD}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{BAUD}{BAUD}}
+{\footnotesize\ttfamily \#define B\+A\+UD~9600}
+
+
+
+Definition at line 2 of file stdio\+\_\+setup.\+c.
+
+\mbox{\Hypertarget{stdio__setup_8c_addaa61b72aca51ed4835978d500f8755}\label{stdio__setup_8c_addaa61b72aca51ed4835978d500f8755}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!BAUD\_TOL@{BAUD\_TOL}}
+\index{BAUD\_TOL@{BAUD\_TOL}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{BAUD\_TOL}{BAUD\_TOL}}
+{\footnotesize\ttfamily \#define B\+A\+U\+D\+\_\+\+T\+OL~2}
+
+
+
+Definition at line 3 of file stdio\+\_\+setup.\+c.
+
+\mbox{\Hypertarget{stdio__setup_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{stdio__setup_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+
+
+Definition at line 1 of file stdio\+\_\+setup.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stdio__setup_8c_a9226435e97da1b2bbb55068bb23b2b9a}\label{stdio__setup_8c_a9226435e97da1b2bbb55068bb23b2b9a}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!UartGetchar@{UartGetchar}}
+\index{UartGetchar@{UartGetchar}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{UartGetchar()}{UartGetchar()}}
+{\footnotesize\ttfamily int Uart\+Getchar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file stdio\+\_\+setup.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{stdio__setup_8c_a9226435e97da1b2bbb55068bb23b2b9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{stdio__setup_8c_a61f5dee7d3d128cc710e664a198d0904}\label{stdio__setup_8c_a61f5dee7d3d128cc710e664a198d0904}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!UartInit@{UartInit}}
+\index{UartInit@{UartInit}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{UartInit()}{UartInit()}}
+{\footnotesize\ttfamily void Uart\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file stdio\+\_\+setup.\+c.
+
+\mbox{\Hypertarget{stdio__setup_8c_acd5b9b7e83ddbed4d3b46562e20e1e6e}\label{stdio__setup_8c_acd5b9b7e83ddbed4d3b46562e20e1e6e}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!UartPutchar@{UartPutchar}}
+\index{UartPutchar@{UartPutchar}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{UartPutchar()}{UartPutchar()}}
+{\footnotesize\ttfamily void Uart\+Putchar (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file stdio\+\_\+setup.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{stdio__setup_8c_a0de9fa3a7fecd97102d1abef2039f21d}\label{stdio__setup_8c_a0de9fa3a7fecd97102d1abef2039f21d}} 
+\index{stdio\_setup.c@{stdio\_setup.c}!the\_stdio@{the\_stdio}}
+\index{the\_stdio@{the\_stdio}!stdio\_setup.c@{stdio\_setup.c}}
+\doxysubsubsection{\texorpdfstring{the\_stdio}{the\_stdio}}
+{\footnotesize\ttfamily F\+I\+LE the\+\_\+stdio = F\+D\+E\+V\+\_\+\+S\+E\+T\+U\+P\+\_\+\+S\+T\+R\+E\+AM(\mbox{\hyperlink{stdio__setup_8c_acd5b9b7e83ddbed4d3b46562e20e1e6e}{Uart\+Putchar}}, \mbox{\hyperlink{stdio__setup_8c_a9226435e97da1b2bbb55068bb23b2b9a}{Uart\+Getchar}}, \+\_\+\+F\+D\+E\+V\+\_\+\+S\+E\+T\+U\+P\+\_\+\+RW)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 12 of file stdio\+\_\+setup.\+c.
+

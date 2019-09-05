@@ -1,0 +1,7 @@
+<map id="lcd_home" name="lcd_home">
+<area shape="rect" id="node1" title="Set cursor to home position." alt="" coords="5,31,84,57"/>
+<area shape="rect" id="node2" href="$group__pfleury__lcd.html#gaea9d14f02df06f948cb5a56776980826" title="Send LCD controller instruction command." alt="" coords="132,31,235,57"/>
+<area shape="rect" id="node3" href="$lcd_8c.html#a4ca4373275e11ba1a2d2cbd242cbf1a4" title=" " alt="" coords="283,5,380,32"/>
+<area shape="rect" id="node5" href="$lcd_8c.html#a6aa4fa5c8ba19268338fa4215fa1807e" title=" " alt="" coords="295,56,368,83"/>
+<area shape="rect" id="node4" href="$lcd_8c.html#a48a16fff03a1164f27b460a49e702dc4" title=" " alt="" coords="428,5,499,32"/>
+</map>

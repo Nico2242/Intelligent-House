@@ -1,0 +1,7 @@
+<map id="lcd_gotoxy" name="lcd_gotoxy">
+<area shape="rect" id="node1" title="Set cursor to specified position." alt="" coords="5,31,91,57"/>
+<area shape="rect" id="node2" href="$group__pfleury__lcd.html#gaea9d14f02df06f948cb5a56776980826" title="Send LCD controller instruction command." alt="" coords="139,31,241,57"/>
+<area shape="rect" id="node3" href="$lcd_8c.html#a4ca4373275e11ba1a2d2cbd242cbf1a4" title=" " alt="" coords="289,5,387,32"/>
+<area shape="rect" id="node5" href="$lcd_8c.html#a6aa4fa5c8ba19268338fa4215fa1807e" title=" " alt="" coords="301,56,375,83"/>
+<area shape="rect" id="node4" href="$lcd_8c.html#a48a16fff03a1164f27b460a49e702dc4" title=" " alt="" coords="435,5,505,32"/>
+</map>

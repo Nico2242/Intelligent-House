@@ -1,0 +1,115 @@
+\hypertarget{_m_k_b_library_8h}{}\doxysection{Matrix\+Keyboard\+Lib/\+M\+K\+B\+Library.h File Reference}
+\label{_m_k_b_library_8h}\index{MatrixKeyboardLib/MKBLibrary.h@{MatrixKeyboardLib/MKBLibrary.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_m_k_b_library_8h_a0f91403923b86f20dab8f271446a05cf}{M\+K\+B\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+H\+\_\+B}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_m_k_b_library_8h_ab3288716c21bf82ad385ff699fa1670b}{Column\+Scan}} ()
+\begin{DoxyCompactList}\small\item\em Col1 -\/ Col4 goes low one after each other. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_m_k_b_library_8h_a2a4456cbb7c716b1e3e904f95b73a6d2}{Read\+Rows}} ()
+\begin{DoxyCompactList}\small\item\em Read rows to check if one goes low(0) when clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_k_b_library_8h_af64eccad2c68cdf2923dc2f9ca92a38e}{Decode\+Key\+Board}} (int keypressed)
+\begin{DoxyCompactList}\small\item\em Decode which key is pressed and do the right menu function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_k_b_library_8h_a7ce0a14b6e7779fbb2d9a05333792c41}{Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize ports. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{_m_k_b_library_8h_a0de9cbfb23a40f03434d8eb141457c08}{current\+Menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_m_k_b_library_8h_a0f91403923b86f20dab8f271446a05cf}\label{_m_k_b_library_8h_a0f91403923b86f20dab8f271446a05cf}} 
+\index{MKBLibrary.h@{MKBLibrary.h}!MKBLIBRARY\_H\_B@{MKBLIBRARY\_H\_B}}
+\index{MKBLIBRARY\_H\_B@{MKBLIBRARY\_H\_B}!MKBLibrary.h@{MKBLibrary.h}}
+\doxysubsubsection{\texorpdfstring{MKBLIBRARY\_H\_B}{MKBLIBRARY\_H\_B}}
+{\footnotesize\ttfamily \#define M\+K\+B\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+H\+\_\+B}
+
+
+
+Definition at line 3 of file M\+K\+B\+Library.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_m_k_b_library_8h_ab3288716c21bf82ad385ff699fa1670b}\label{_m_k_b_library_8h_ab3288716c21bf82ad385ff699fa1670b}} 
+\index{MKBLibrary.h@{MKBLibrary.h}!ColumnScan@{ColumnScan}}
+\index{ColumnScan@{ColumnScan}!MKBLibrary.h@{MKBLibrary.h}}
+\doxysubsubsection{\texorpdfstring{ColumnScan()}{ColumnScan()}}
+{\footnotesize\ttfamily void Column\+Scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Col1 -\/ Col4 goes low one after each other. 
+
+The column\+Counter counts 1, 2, 3 and 4 and stores values static between each call. 
+
+Definition at line 56 of file M\+K\+B\+Library.\+c.
+
+\mbox{\Hypertarget{_m_k_b_library_8h_af64eccad2c68cdf2923dc2f9ca92a38e}\label{_m_k_b_library_8h_af64eccad2c68cdf2923dc2f9ca92a38e}} 
+\index{MKBLibrary.h@{MKBLibrary.h}!DecodeKeyBoard@{DecodeKeyBoard}}
+\index{DecodeKeyBoard@{DecodeKeyBoard}!MKBLibrary.h@{MKBLibrary.h}}
+\doxysubsubsection{\texorpdfstring{DecodeKeyBoard()}{DecodeKeyBoard()}}
+{\footnotesize\ttfamily void Decode\+Key\+Board (\begin{DoxyParamCaption}\item[{int}]{keypressed }\end{DoxyParamCaption})}
+
+
+
+Decode which key is pressed and do the right menu function. 
+
+
+
+Definition at line 106 of file M\+K\+B\+Library.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_m_k_b_library_8h_af64eccad2c68cdf2923dc2f9ca92a38e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_m_k_b_library_8h_a7ce0a14b6e7779fbb2d9a05333792c41}\label{_m_k_b_library_8h_a7ce0a14b6e7779fbb2d9a05333792c41}} 
+\index{MKBLibrary.h@{MKBLibrary.h}!Init@{Init}}
+\index{Init@{Init}!MKBLibrary.h@{MKBLibrary.h}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize ports. 
+
+Set output ports and enable pull-\/ups 
+
+Definition at line 194 of file M\+K\+B\+Library.\+c.
+
+\mbox{\Hypertarget{_m_k_b_library_8h_a2a4456cbb7c716b1e3e904f95b73a6d2}\label{_m_k_b_library_8h_a2a4456cbb7c716b1e3e904f95b73a6d2}} 
+\index{MKBLibrary.h@{MKBLibrary.h}!ReadRows@{ReadRows}}
+\index{ReadRows@{ReadRows}!MKBLibrary.h@{MKBLibrary.h}}
+\doxysubsubsection{\texorpdfstring{ReadRows()}{ReadRows()}}
+{\footnotesize\ttfamily int Read\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read rows to check if one goes low(0) when clicked. 
+
+If a key is pressed the corresponding row of the current column scanned, goes low and the key pressed is returned. 
+
+Definition at line 91 of file M\+K\+B\+Library.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_m_k_b_library_8h_a0de9cbfb23a40f03434d8eb141457c08}\label{_m_k_b_library_8h_a0de9cbfb23a40f03434d8eb141457c08}} 
+\index{MKBLibrary.h@{MKBLibrary.h}!currentMenu@{currentMenu}}
+\index{currentMenu@{currentMenu}!MKBLibrary.h@{MKBLibrary.h}}
+\doxysubsubsection{\texorpdfstring{currentMenu}{currentMenu}}
+{\footnotesize\ttfamily char current\+Menu}
+
+
+
+Definition at line 52 of file M\+K\+B\+Library.\+c.
+
