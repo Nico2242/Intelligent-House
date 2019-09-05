@@ -47,6 +47,7 @@ R4 | R3 | R2 | R1 | C4 | C3 | C2 | C1 | Key
 #include <avr/io.h>
 #include <util/delay.h>
 #include "MKBLibrary.h"
+#include "RGBLibrary.h"
 
 char currentMenu = '0';
 
@@ -101,8 +102,7 @@ int ReadRows()
 	return keypressed;
 }
 
-/// Decode which key is pressed and print it.
-/** Take the keypressed value and switch case which key that is pressed and print the key to terminal */
+/// Decode which key is pressed and do the right menu function.
 void DecodeKeyBoard(int keypressed)
 {
 	char charKeyPressed;
@@ -114,9 +114,21 @@ void DecodeKeyBoard(int keypressed)
 			{
 				Menu('2');
 			}
+			if (currentMenu == '4')
+			{
+				RGBChangeColor(255,255,255);
+			}
+			if (currentMenu == '2')
+			{
+				RGBTurnOn();
+			}
 		break;
 		case 0b11011110:
 			printf("4"); 
+			if (currentMenu == '4')
+			{
+				RGBChangeColor(255,0,150);
+			}
 		break;
 		case 0b10111110:
 			printf("7");
@@ -125,7 +137,15 @@ void DecodeKeyBoard(int keypressed)
 			printf("*"); 
 		break;
 		case 0b11101101:
-			printf("2"); 
+			printf("2");
+			if (currentMenu == '2')
+			{
+				RGBTurnOff();
+			}
+			if (currentMenu == '4')
+			{
+				RGBChangeColor(255,100,0);
+			}
 		break;
 		case 0b11011101:
 			printf("5"); 
@@ -157,6 +177,10 @@ void DecodeKeyBoard(int keypressed)
 			if (currentMenu == '3')
 			{
 				Menu('4');
+			}
+			if (currentMenu == '4')
+			{
+				RGBChangeColor(0,0,255);
 			}
 		break;
 		case 0b10111011:

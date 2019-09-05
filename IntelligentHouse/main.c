@@ -25,6 +25,7 @@ Code | Name
 #include "MKBLibrary.h"
 #include <avr/interrupt.h>
 #include "lcd.h"
+#include "RGBLibrary.h"
 
 
 void Menu(char menu)
@@ -34,7 +35,6 @@ void Menu(char menu)
 	
 	/* clear display and home cursor */
 	lcd_clrscr();
-	
 	
 	
 	switch (menu)
@@ -87,6 +87,8 @@ int main(void)
 	timer1Init();
 	
 	Menu('0');
+	
+	RGBTimer3Init();
 	
 	sei();
 	
