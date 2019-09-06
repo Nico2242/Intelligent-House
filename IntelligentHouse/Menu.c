@@ -72,6 +72,10 @@ void Menu(char menu)
 			lcd_puts("4=Pink");
 			currentMenu = '4';
 		break;
+		case '5':
+			lcd_puts("1=Adjust");
+			currentMenu = '5';
+		break;
 		default:
 			lcd_puts("1=Light");
 			lcd_gotoxy(0,1);

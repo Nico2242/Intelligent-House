@@ -125,6 +125,10 @@ void DecodeKeyBoard(int keypressed)
 		break;
 		case 0b11101101:						// or 0xED, Keypad 2
 			printf("2");
+			if (currentMenu == '0')				// Main Menu Part 1
+			{
+				Menu('5');						// Goto: Temperature Control Menu
+			}
 			if (currentMenu == '2')				// Light Control Menu Part 1
 			{
 				RGBTurnOff();
