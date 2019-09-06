@@ -6,5 +6,7 @@ lcd.c
 
 main.c
 
+Menu.c
+
 Setup\stdio_setup.c
 

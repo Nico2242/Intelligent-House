@@ -41,6 +41,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../lcd.c \
 ../main.c \
+../Menu.c \
 ../Setup/stdio_setup.c
 
 
@@ -53,21 +54,25 @@ ASM_SRCS +=
 OBJS +=  \
 lcd.o \
 main.o \
+Menu.o \
 Setup/stdio_setup.o
 
 OBJS_AS_ARGS +=  \
 lcd.o \
 main.o \
+Menu.o \
 Setup/stdio_setup.o
 
 C_DEPS +=  \
 lcd.d \
 main.d \
+Menu.d \
 Setup/stdio_setup.d
 
 C_DEPS_AS_ARGS +=  \
 lcd.d \
 main.d \
+Menu.d \
 Setup/stdio_setup.d
 
 OUTPUT_FILE_PATH +=IntelligentHouse.elf
@@ -94,6 +99,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../../MatrixKeyboardLib" -I"../../RGB-LEDLib"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Menu.o: .././Menu.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../../MatrixKeyboardLib" -I"../../RGB-LEDLib"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
