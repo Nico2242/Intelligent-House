@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Matrix KeyPad", "index.html", [
+  [ "Intelligent House", "index.html", [
     [ "Modules", "modules.html", "modules" ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
@@ -39,7 +39,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_m_k_b_library_8c.html",
-"lcd_8d_source.html"
+"lcd_8c.html#adb21ec2be5713b0540c4c273c33dfd7f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

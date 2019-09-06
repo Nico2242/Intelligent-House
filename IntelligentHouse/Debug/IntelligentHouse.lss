@@ -19,15 +19,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 000013fb  00000000  00000000  00003160  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000f95  00000000  00000000  0000455b  2**0
+  8 .debug_line   00000f97  00000000  00000000  0000455b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000304  00000000  00000000  000054f0  2**2
+  9 .debug_frame  00000304  00000000  00000000  000054f4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000906  00000000  00000000  000057f4  2**0
+ 10 .debug_str    00000906  00000000  00000000  000057f8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000941  00000000  00000000  000060fa  2**0
+ 11 .debug_loc    00000941  00000000  00000000  000060fe  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000138  00000000  00000000  00006a3b  2**0
+ 12 .debug_ranges 00000138  00000000  00000000  00006a3f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -472,38 +472,18 @@ void lcd_init(uint8_t dispAttr)
  2ae:	08 95       	ret
 
 000002b0 <main>:
-#include "RGBLibrary.h"
-#include "Menu.h"
-
-int main(void)
-{
-	UartInit();
  2b0:	88 d0       	rcall	.+272    	; 0x3c2 <UartInit>
-
-	Init();
  2b2:	a4 d1       	rcall	.+840    	; 0x5fc <Init>
-	
-	timer1Init();
  2b4:	d0 d1       	rcall	.+928    	; 0x656 <timer1Init>
-	
-	Menu('0');
  2b6:	80 e3       	ldi	r24, 0x30	; 48
  2b8:	05 d0       	rcall	.+10     	; 0x2c4 <Menu>
-	
-	RGBTimer3Init();
  2ba:	de d1       	rcall	.+956    	; 0x678 <RGBTimer3Init>
  2bc:	78 94       	sei
-	
-	sei();
  2be:	df d0       	rcall	.+446    	; 0x47e <ReadRows>
-	
-	while(1) {
-		int keypressed = ReadRows();
  2c0:	f3 d0       	rcall	.+486    	; 0x4a8 <DecodeKeyBoard>
  2c2:	fd cf       	rjmp	.-6      	; 0x2be <main+0xe>
 
 000002c4 <Menu>:
-		DecodeKeyBoard(keypressed);
  2c4:	cf 93       	push	r28
  2c6:	c8 2f       	mov	r28, r24
  2c8:	8c e0       	ldi	r24, 0x0C	; 12
@@ -535,117 +515,117 @@ void Menu(char menu)
  2e4:	81 e1       	ldi	r24, 0x11	; 17
 	{
 		case '1':
-		lcd_puts("3=Windows");
+			lcd_puts("3=Windows");
  2e6:	92 e0       	ldi	r25, 0x02	; 2
  2e8:	a1 df       	rcall	.-190    	; 0x22c <lcd_puts>
  2ea:	61 e0       	ldi	r22, 0x01	; 1
-		lcd_gotoxy(0,1);
+			lcd_gotoxy(0,1);
  2ec:	80 e0       	ldi	r24, 0x00	; 0
  2ee:	81 df       	rcall	.-254    	; 0x1f2 <lcd_gotoxy>
  2f0:	8b e1       	ldi	r24, 0x1B	; 27
-		lcd_puts("4=Garage");
+			lcd_puts("4=Garage");
  2f2:	92 e0       	ldi	r25, 0x02	; 2
  2f4:	9b df       	rcall	.-202    	; 0x22c <lcd_puts>
  2f6:	60 e0       	ldi	r22, 0x00	; 0
-		lcd_gotoxy(10,0);
+			lcd_gotoxy(10,0);
  2f8:	8a e0       	ldi	r24, 0x0A	; 10
  2fa:	7b df       	rcall	.-266    	; 0x1f2 <lcd_gotoxy>
  2fc:	84 e2       	ldi	r24, 0x24	; 36
-		lcd_puts("0=Back");
+			lcd_puts("0=Back");
  2fe:	92 e0       	ldi	r25, 0x02	; 2
  300:	95 df       	rcall	.-214    	; 0x22c <lcd_puts>
  302:	81 e3       	ldi	r24, 0x31	; 49
-		currentMenu = '1';
+			currentMenu = '1';
  304:	80 93 10 02 	sts	0x0210, r24	; 0x800210 <currentMenu>
 		break;
  308:	3f c0       	rjmp	.+126    	; 0x388 <Menu+0xc4>
 		case '2':
-		lcd_puts("1=Turn On");
+			lcd_puts("1=Turn On");
  30a:	8b e2       	ldi	r24, 0x2B	; 43
  30c:	92 e0       	ldi	r25, 0x02	; 2
  30e:	8e df       	rcall	.-228    	; 0x22c <lcd_puts>
-		lcd_gotoxy(0,1);
+			lcd_gotoxy(0,1);
  310:	61 e0       	ldi	r22, 0x01	; 1
  312:	80 e0       	ldi	r24, 0x00	; 0
  314:	6e df       	rcall	.-292    	; 0x1f2 <lcd_gotoxy>
  316:	85 e3       	ldi	r24, 0x35	; 53
-		lcd_puts("2=Turn Off");
+			lcd_puts("2=Turn Off");
  318:	92 e0       	ldi	r25, 0x02	; 2
  31a:	88 df       	rcall	.-240    	; 0x22c <lcd_puts>
  31c:	82 e3       	ldi	r24, 0x32	; 50
-		currentMenu = '2';
+			currentMenu = '2';
  31e:	80 93 10 02 	sts	0x0210, r24	; 0x800210 <currentMenu>
  322:	32 c0       	rjmp	.+100    	; 0x388 <Menu+0xc4>
 		break;
 		case '3':
-		lcd_puts("3=Color");
+			lcd_puts("3=Color");
  324:	80 e4       	ldi	r24, 0x40	; 64
  326:	92 e0       	ldi	r25, 0x02	; 2
  328:	81 df       	rcall	.-254    	; 0x22c <lcd_puts>
-		currentMenu = '3';
+			currentMenu = '3';
  32a:	83 e3       	ldi	r24, 0x33	; 51
  32c:	80 93 10 02 	sts	0x0210, r24	; 0x800210 <currentMenu>
 		break;
 		case '4':
-		lcd_puts("1=White");
+			lcd_puts("1=White");
  330:	2b c0       	rjmp	.+86     	; 0x388 <Menu+0xc4>
  332:	88 e4       	ldi	r24, 0x48	; 72
  334:	92 e0       	ldi	r25, 0x02	; 2
-		lcd_gotoxy(8,0);
+			lcd_gotoxy(8,0);
  336:	7a df       	rcall	.-268    	; 0x22c <lcd_puts>
  338:	60 e0       	ldi	r22, 0x00	; 0
  33a:	88 e0       	ldi	r24, 0x08	; 8
-		lcd_puts("2=Yellow");
+			lcd_puts("2=Yellow");
  33c:	5a df       	rcall	.-332    	; 0x1f2 <lcd_gotoxy>
  33e:	80 e5       	ldi	r24, 0x50	; 80
  340:	92 e0       	ldi	r25, 0x02	; 2
-		lcd_gotoxy(0,1);
+			lcd_gotoxy(0,1);
  342:	74 df       	rcall	.-280    	; 0x22c <lcd_puts>
  344:	61 e0       	ldi	r22, 0x01	; 1
  346:	80 e0       	ldi	r24, 0x00	; 0
  348:	54 df       	rcall	.-344    	; 0x1f2 <lcd_gotoxy>
-		lcd_puts("3=Blue");
+			lcd_puts("3=Blue");
  34a:	89 e5       	ldi	r24, 0x59	; 89
  34c:	92 e0       	ldi	r25, 0x02	; 2
  34e:	6e df       	rcall	.-292    	; 0x22c <lcd_puts>
-		lcd_gotoxy(10,1);
+			lcd_gotoxy(10,1);
  350:	61 e0       	ldi	r22, 0x01	; 1
  352:	8a e0       	ldi	r24, 0x0A	; 10
  354:	4e df       	rcall	.-356    	; 0x1f2 <lcd_gotoxy>
-		lcd_puts("4=Pink");
+			lcd_puts("4=Pink");
  356:	80 e6       	ldi	r24, 0x60	; 96
  358:	92 e0       	ldi	r25, 0x02	; 2
  35a:	68 df       	rcall	.-304    	; 0x22c <lcd_puts>
-		currentMenu = '4';
+			currentMenu = '4';
  35c:	84 e3       	ldi	r24, 0x34	; 52
  35e:	80 93 10 02 	sts	0x0210, r24	; 0x800210 <currentMenu>
 		break;
 		default:
-		lcd_puts("1=Light");
+			lcd_puts("1=Light");
  362:	12 c0       	rjmp	.+36     	; 0x388 <Menu+0xc4>
  364:	87 e6       	ldi	r24, 0x67	; 103
  366:	92 e0       	ldi	r25, 0x02	; 2
  368:	61 df       	rcall	.-318    	; 0x22c <lcd_puts>
-		lcd_gotoxy(0,1);
+			lcd_gotoxy(0,1);
  36a:	61 e0       	ldi	r22, 0x01	; 1
  36c:	80 e0       	ldi	r24, 0x00	; 0
  36e:	41 df       	rcall	.-382    	; 0x1f2 <lcd_gotoxy>
  370:	8f e6       	ldi	r24, 0x6F	; 111
-		lcd_puts("2=Temp");
+			lcd_puts("2=Temp");
  372:	92 e0       	ldi	r25, 0x02	; 2
  374:	5b df       	rcall	.-330    	; 0x22c <lcd_puts>
  376:	61 e0       	ldi	r22, 0x01	; 1
  378:	8a e0       	ldi	r24, 0x0A	; 10
-		lcd_gotoxy(10,1);
+			lcd_gotoxy(10,1);
  37a:	3b df       	rcall	.-394    	; 0x1f2 <lcd_gotoxy>
  37c:	86 e7       	ldi	r24, 0x76	; 118
  37e:	92 e0       	ldi	r25, 0x02	; 2
  380:	55 df       	rcall	.-342    	; 0x22c <lcd_puts>
-		lcd_puts("9=Next");
+			lcd_puts("9=Next");
  382:	80 e3       	ldi	r24, 0x30	; 48
  384:	80 93 10 02 	sts	0x0210, r24	; 0x800210 <currentMenu>
  388:	cf 91       	pop	r28
-		currentMenu = '0';
+			currentMenu = '0';
  38a:	08 95       	ret
 
 0000038c <UartPutchar>:
@@ -1018,7 +998,7 @@ void DecodeKeyBoard(int keypressed)
  56a:	84 e3       	ldi	r24, 0x34	; 52
  56c:	90 e0       	ldi	r25, 0x00	; 0
  56e:	dd d0       	rcall	.+442    	; 0x72a <putchar>
-			if (currentMenu == '0')				// Main Menu
+			if (currentMenu == '0')				// Main Menu Part 1
  570:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
  574:	80 33       	cpi	r24, 0x30	; 48
  576:	19 f4       	brne	.+6      	; 0x57e <DecodeKeyBoard+0xd6>
@@ -1044,75 +1024,75 @@ void DecodeKeyBoard(int keypressed)
  594:	aa c0       	rjmp	.+340    	; 0x6ea <RGBChangeColor>
 			}
 		break;
-		case 0b01111101:
+		case 0b01111101:						// or 0x7D, Keypad 0
 			printf("0");
  596:	08 95       	ret
  598:	80 e3       	ldi	r24, 0x30	; 48
  59a:	90 e0       	ldi	r25, 0x00	; 0
-			if (currentMenu == '1')
+			if (currentMenu == '1')				// Main Menu Part 2 
  59c:	c6 d0       	rcall	.+396    	; 0x72a <putchar>
  59e:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
  5a2:	81 33       	cpi	r24, 0x31	; 49
 			{
-				Menu('0');
+				Menu('0');						// Goto: Main Menu Part 1
  5a4:	19 f4       	brne	.+6      	; 0x5ac <DecodeKeyBoard+0x104>
  5a6:	80 e3       	ldi	r24, 0x30	; 48
  5a8:	90 e0       	ldi	r25, 0x00	; 0
 			}
-			if (currentMenu == '2')
+			if (currentMenu == '2')				// Light Control Menu Part 1
  5aa:	8c de       	rcall	.-744    	; 0x2c4 <Menu>
  5ac:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
  5b0:	82 33       	cpi	r24, 0x32	; 50
 			{
-				Menu('0');
+				Menu('0');						// Goto: Main Menu Part 1
  5b2:	19 f4       	brne	.+6      	; 0x5ba <DecodeKeyBoard+0x112>
  5b4:	80 e3       	ldi	r24, 0x30	; 48
  5b6:	90 e0       	ldi	r25, 0x00	; 0
 			}
-			if (currentMenu == '3')
+			if (currentMenu == '3')				// Light Control Menu Part 2
  5b8:	85 de       	rcall	.-758    	; 0x2c4 <Menu>
  5ba:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
 			{
-				Menu('2');
+				Menu('2');						// Goto: Light Control Menu Part 1
  5be:	83 33       	cpi	r24, 0x33	; 51
  5c0:	19 f4       	brne	.+6      	; 0x5c8 <DecodeKeyBoard+0x120>
  5c2:	82 e3       	ldi	r24, 0x32	; 50
  5c4:	90 e0       	ldi	r25, 0x00	; 0
 			}
-			if (currentMenu == '4')
+			if (currentMenu == '4')				// Light Color Menu
  5c6:	7e de       	rcall	.-772    	; 0x2c4 <Menu>
  5c8:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
 			{
-				Menu('3');
+				Menu('3');						// Goto: Light Control Menu Part 2
  5cc:	84 33       	cpi	r24, 0x34	; 52
  5ce:	a9 f4       	brne	.+42     	; 0x5fa <DecodeKeyBoard+0x152>
  5d0:	83 e3       	ldi	r24, 0x33	; 51
  5d2:	90 e0       	ldi	r25, 0x00	; 0
 			}
 		break;
-		case 0b10111011:
+		case 0b10111011:						// Or 0xBB, Keypad 9
 			printf("9");
  5d4:	77 ce       	rjmp	.-786    	; 0x2c4 <Menu>
  5d6:	08 95       	ret
  5d8:	89 e3       	ldi	r24, 0x39	; 57
  5da:	90 e0       	ldi	r25, 0x00	; 0
-			if (currentMenu == '0')
+			if (currentMenu == '0')				// Main Menu
  5dc:	a6 d0       	rcall	.+332    	; 0x72a <putchar>
  5de:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
  5e2:	80 33       	cpi	r24, 0x30	; 48
 			{
-				Menu('1');
+				Menu('1');						// Goto: Main Menu Part 1
  5e4:	19 f4       	brne	.+6      	; 0x5ec <DecodeKeyBoard+0x144>
  5e6:	81 e3       	ldi	r24, 0x31	; 49
  5e8:	90 e0       	ldi	r25, 0x00	; 0
  5ea:	6c de       	rcall	.-808    	; 0x2c4 <Menu>
 			}
-			if (currentMenu == '2')
+			if (currentMenu == '2')				// Light Control Menu Part 1
  5ec:	80 91 10 02 	lds	r24, 0x0210	; 0x800210 <currentMenu>
  5f0:	82 33       	cpi	r24, 0x32	; 50
  5f2:	19 f4       	brne	.+6      	; 0x5fa <DecodeKeyBoard+0x152>
 			{
-				Menu('3');
+				Menu('3');						// Goto: Light Control Menu Part 2
  5f4:	83 e3       	ldi	r24, 0x33	; 51
  5f6:	90 e0       	ldi	r25, 0x00	; 0
  5f8:	65 ce       	rjmp	.-822    	; 0x2c4 <Menu>
@@ -1120,15 +1100,15 @@ void DecodeKeyBoard(int keypressed)
 
 000005fc <Init>:
  5fc:	87 b1       	in	r24, 0x07	; 7
+			Menu('0');							// Goto: Main Menu Part 1
+		break;
+	}
+}
 
 /// Initialize ports.
-/** Set output ports and enable pull-ups */
-void Init(void)
-{
-	DDRC |= (1<<PC0) | (1<<PC1) | (1<<PC2) | (1<<PC3); // Set output ports
  5fe:	8f 60       	ori	r24, 0x0F	; 15
  600:	87 b9       	out	0x07, r24	; 7
-	PORTC = (1<<PC4) | (1<<PC5) | (1<<PC6) | (1<<PC7); // Enable Pull-up
+/** Set output ports and enable pull-ups */
  602:	80 ef       	ldi	r24, 0xF0	; 240
  604:	88 b9       	out	0x08, r24	; 8
  606:	08 95       	ret

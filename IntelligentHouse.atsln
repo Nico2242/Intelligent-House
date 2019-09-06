@@ -9,6 +9,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "MatrixKeyboardLib", "Matrix
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RGB-LEDLib", "RGB-LEDLib\RGB-LEDLib.cproj", "{10904B34-1CDB-4F89-9C0C-18ECB35E002A}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "TemperatureLib", "TemperatureLib\TemperatureLib.cproj", "{E6559933-E4FB-44BF-9C8F-612C29B1A737}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -27,6 +29,10 @@ Global
 		{10904B34-1CDB-4F89-9C0C-18ECB35E002A}.Debug|AVR.Build.0 = Debug|AVR
 		{10904B34-1CDB-4F89-9C0C-18ECB35E002A}.Release|AVR.ActiveCfg = Release|AVR
 		{10904B34-1CDB-4F89-9C0C-18ECB35E002A}.Release|AVR.Build.0 = Release|AVR
+		{E6559933-E4FB-44BF-9C8F-612C29B1A737}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E6559933-E4FB-44BF-9C8F-612C29B1A737}.Debug|AVR.Build.0 = Debug|AVR
+		{E6559933-E4FB-44BF-9C8F-612C29B1A737}.Release|AVR.ActiveCfg = Release|AVR
+		{E6559933-E4FB-44BF-9C8F-612C29B1A737}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

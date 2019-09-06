@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['the_5fstdio_187',['the_stdio',['../stdio__setup_8c.html#a0de9fa3a7fecd97102d1abef2039f21d',1,'stdio_setup.c']]]
+  ['the_5fstdio_189',['the_stdio',['../stdio__setup_8c.html#a0de9fa3a7fecd97102d1abef2039f21d',1,'stdio_setup.c']]]
 ];
