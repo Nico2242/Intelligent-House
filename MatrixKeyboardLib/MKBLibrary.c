@@ -147,7 +147,7 @@ void DecodeKeyBoard(int keypressed)
 		break;
 		case 0b11011110:						// or 0xDE, Keypad 4
 			printf("4"); 
-			if (currentMenu == '0')				// Main Menu
+			if (currentMenu == '0')				// Main Menu Part 1
 			{
 				Menu('5');						// Goto: Temperature Control Menu
 			}
@@ -156,35 +156,39 @@ void DecodeKeyBoard(int keypressed)
 				RGBChangeColor(255,0,150);
 			}
 		break;
-		case 0b01111101:
+		case 0b01111101:						// or 0x7D, Keypad 0
 			printf("0");
-			if (currentMenu == '1')
+			if (currentMenu == '1')				// Main Menu Part 2 
 			{
-				Menu('0');
+				Menu('0');						// Goto: Main Menu Part 1
 			}
-			if (currentMenu == '2')
+			if (currentMenu == '2')				// Light Control Menu Part 1
 			{
-				Menu('0');
+				Menu('0');						// Goto: Main Menu Part 1
 			}
-			if (currentMenu == '3')
+			if (currentMenu == '3')				// Light Control Menu Part 2
 			{
-				Menu('2');
+				Menu('2');						// Goto: Light Control Menu Part 1
 			}
-			if (currentMenu == '4')
+			if (currentMenu == '4')				// Light Color Menu
 			{
-				Menu('3');
+				Menu('3');						// Goto: Light Control Menu Part 2
 			}
 		break;
-		case 0b10111011:
+		case 0b10111011:						// Or 0xBB, Keypad 9
 			printf("9");
-			if (currentMenu == '0')
+			if (currentMenu == '0')				// Main Menu
 			{
-				Menu('1');
+				Menu('1');						// Goto: Main Menu Part 1
 			}
-			if (currentMenu == '2')
+			if (currentMenu == '2')				// Light Control Menu Part 1
 			{
-				Menu('3');
+				Menu('3');						// Goto: Light Control Menu Part 2
 			}
+		break;
+		case 0b01111011:						// Or 0x7B, Keypad #
+			printf("#");
+			Menu('0');							// Goto: Main Menu Part 1
 		break;
 	}
 }

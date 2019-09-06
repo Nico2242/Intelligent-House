@@ -1,7 +1,7 @@
 <map id="main" name="main">
 <area shape="rect" id="node1" title=" " alt="" coords="5,233,56,260"/>
 <area shape="rect" id="node2" href="$_m_k_b_library_8c.html#af64eccad2c68cdf2923dc2f9ca92a38e" title="Decode which key is pressed and do the right menu function." alt="" coords="104,132,227,159"/>
-<area shape="rect" id="node3" href="$main_8c.html#abd67f1092a983ada5413f2c1ccfb5322" title=" " alt="" coords="293,81,348,108"/>
+<area shape="rect" id="node3" href="$_menu_8c.html#abd67f1092a983ada5413f2c1ccfb5322" title=" " alt="" coords="293,81,348,108"/>
 <area shape="rect" id="node16" href="$_m_k_b_library_8c.html#a7ce0a14b6e7779fbb2d9a05333792c41" title="Initialize ports." alt="" coords="146,183,185,209"/>
 <area shape="rect" id="node17" href="$_m_k_b_library_8c.html#a2a4456cbb7c716b1e3e904f95b73a6d2" title="Read rows to check if one goes low(0) when clicked." alt="" coords="123,233,207,260"/>
 <area shape="rect" id="node18" href="$_r_g_b_library_8c.html#a52ac8baf3fd4673727e4d15738285e06" title=" " alt="" coords="112,284,219,311"/>
